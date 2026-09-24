@@ -3,41 +3,73 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="style.js" defer></script>
   <title>Document</title>
 </head>
 <body>
   <section class="navbar">
     <div class="nav">
       <div class="nav__content--wrapper">
-        <div class="logo">
-          <img src="" alt="">
+        <div class="logo__container">
+          <img class="logo__img" src="assets/images.png" alt="">
+          <span class="logo__text">CineFind</span>
         </div>
         <div class="nav__links">
           <a href="#" class="link">Home</a>
-          <a href="#" class="link">Find Your Car</a>
-          <a href="#" class="link__pprimary">Conatct</a>
+          <a href="#" class="link">Discover</a>
+          <a href="#" class="link">Genres</a>
+          <a href="#" class="link">Favorites</a>
         </div>
       </div>
     </div>
   </section>
-  <section class="landing__page">
+  <header class="hero">
+    <svg class="film__strip" viewBox="0 0 1200 700" preserveAspectRatio="none">
+      <path
+      class="film__body"
+      d="M-100 100
+      C200 350, 350 50, 600 250
+      S900 600, 1300 350">
+      </path>
+      <path
+      class="film__holes"
+      d="M-100 75
+      C200 325, 350 25, 600 225
+      S900 575, 1300 325">
+      </path>
+      <path
+      class="film__holes"
+      d="M-100 125
+      C200 375, 350 75, 600 275
+      S900 625, 1300 375">
+      </path>
+    </svg>  
+    <div class="hero__content">
+      <p class="hero__eyebrow">YOUR NEXT MOVIE AWAITS</p>
+      <h1 class="title">Search. Discover. Watch.</h1>
+      <p class="hero__sub-title">Find something you'll love from thousands of movies</p>
+      <form class="search__bar">
+        <input
+          class="search__input" type="text"
+          placeholder="Search for a movie...">
+          <button class="search__btn" type="submit">Search</button>
+      </form>
+    </div>
+  </header>
+  <footer>
     <div class="container">
-      <div class="row">
-        <h1 class="title">Australia's most awarded car subscription platform</h1>
-        <h2 class="sub-title">Find your dream car with <span>blinker</span></h2>
-        <div class="input__wrapper">
-          <input class="" type="text" placeholder="Search by Model, Make or keyword">
-          <button class="btn">
-            <svg></svg>
-          </button>
+      <div class="footer__row">
+        <div class="footer__logo">
+          <img class="logo__img" src="assets/images.png" alt="">
         </div>
+        <div class="footer__list">
+          <a href="#" class="link link__hover--effect">Home</a>
+          <a href="#" class="link link__hover--effect">Favorites</a>
+        </div>
+        <div class="footer__copyright">Copyright &copy Made by Samantha Stoltzfus</div>
       </div>
     </div>
-  </section>
-  <div class="car__wrapper">
-    <div class="car">
-      <img class="car" src="" alt="">
-    </div>
-  </div>
+  </footer>
 </body>
 </html>
