@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <script src="style.js" defer></script>
-  <title>Document</title>
+  <script src="https://kit.fontawesome.com/e3dbc36c63.js" crossorigin="anonymous"></script>
+  <title>CineFind</title>
 </head>
 <body>
   <section class="navbar">
@@ -19,44 +20,79 @@
           <a href="#" class="link">Home</a>
           <a href="#" class="link">Discover</a>
           <a href="#" class="link">Genres</a>
-          <a href="#" class="link">Favorites</a>
         </div>
       </div>
     </div>
   </section>
-  <header class="hero">
-    <svg class="film__strip" viewBox="0 0 1200 700" preserveAspectRatio="none">
-      <path
-      class="film__body"
-      d="M-100 100
-      C200 350, 350 50, 600 250
-      S900 600, 1300 350">
-      </path>
-      <path
-      class="film__holes"
-      d="M-100 75
-      C200 325, 350 25, 600 225
-      S900 575, 1300 325">
-      </path>
-      <path
-      class="film__holes"
-      d="M-100 125
-      C200 375, 350 75, 600 275
-      S900 625, 1300 375">
-      </path>
-    </svg>  
-    <div class="hero__content">
-      <p class="hero__eyebrow">YOUR NEXT MOVIE AWAITS</p>
-      <h1 class="title">Search. Discover. Watch.</h1>
-      <p class="hero__sub-title">Find something you'll love from thousands of movies</p>
-      <form class="search__bar">
-        <input
-          class="search__input" type="text"
-          placeholder="Search for a movie...">
-          <button class="search__btn" type="submit">Search</button>
-      </form>
-    </div>
-  </header>
+  <main>
+    <section class="hero">
+      <svg class="film__strip" viewBox="0 0 1200 700" preserveAspectRatio="none">
+        <path
+        class="film__body"
+        d="M-100 100
+        C200 350, 350 50, 600 250
+        S900 600, 1300 350">
+        </path>
+        <path
+        class="film__holes"
+        d="M-100 75
+        C200 325, 350 25, 600 225
+        S900 575, 1300 325">
+        </path>
+        <path
+        class="film__holes"
+        d="M-100 125
+        C200 375, 350 75, 600 275
+        S900 625, 1300 375">
+        </path>
+      </svg>  
+      <div class="hero__content">
+        <p class="hero__eyebrow">YOUR NEXT MOVIE AWAITS</p>
+        <h1 class="title">Search. Discover. Watch.</h1>
+        <p class="sub-title">Find something you'll love from thousands of movies</p>
+        <form class="search__bar">
+          <input
+            class="search__input" type="text"
+            placeholder="Search for a movie...">
+            <button id="searchButton" class="search__btn" type="submit">Search</button>
+        </form>
+      </div>
+    </section>
+    <section id="discover" class="search__results" aria-live="polite">
+      <h2>Discover Movies</h2>
+      <div id="results"></div>
+    </section>
+    <section id="genres" class="genres">
+      <div class="container">
+        <div class="row">
+          <h2>Browse by genre</h2>
+          <div class="genre__list">
+            <a href="genre__action" class="genre__link">
+              <i class="fa-solid fa-bomb"></i>
+              <h5>Action</h5>
+            </a>
+            <a href="genre__comedy" class="genre__link">
+              <i class="fa-regular fa-face-laugh-beam"></i>
+              <h5>Comedy</h5>
+            </a>
+            <a href="genre__drama" class="genre__link">
+              <i class="fa-solid fa-masks-theater"></i>
+              <h5>Drama</h5>
+            </a>
+            <a href="genre__sci-fi" class="genre__link">
+              <i class="fa-solid fa-robot"></i>
+              <h5>Science Fiction</h5>
+            </a>
+            <a href="genre__faith-based" class="genre__link">
+              <i class="fa-solid fa-cross"></i>
+              <h5>Faith</h5>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+    </section>
+  </main>
   <footer>
     <div class="container">
       <div class="footer__row">
@@ -64,8 +100,9 @@
           <img class="logo__img" src="assets/images.png" alt="">
         </div>
         <div class="footer__list">
-          <a href="#" class="link link__hover--effect">Home</a>
-          <a href="#" class="link link__hover--effect">Favorites</a>
+          <a href="#" class="link">Home</a>
+          <a href="#" class="link">Discover</a>
+          <a href="#" class="link">Genres</a>
         </div>
         <div class="footer__copyright">Copyright &copy Made by Samantha Stoltzfus</div>
       </div>

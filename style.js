@@ -2,6 +2,18 @@
 // Poster API requests: http://img.omdbapi.com/?apikey=[yourkey]&
 //OMDb API: http://www.omdbapi.com/?i=tt3896198&apikey=624cd05f&s=fast
 
+searchButton.classList.add("is-loading");
+searchButton.setAttribute("aria-busy", "true");
+
+try{
+  await runSearch();
+} finally{
+  searchButton.classList.remove("is-loading");
+  searchButton.removeAttribute("aria-busy");
+}
+
+
+
 {"Search":[
   {
     "Title":"The Fast and the Furious","Year":"2001",

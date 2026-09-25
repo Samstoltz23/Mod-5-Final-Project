@@ -1,4 +1,7 @@
-* {
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap")
+
+
+*{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -21,6 +24,14 @@
 
 }
 
+.sub-title{
+  color:#a9a098;
+  font-size:1.1rem;
+}
+
+h2{
+  color:#f5f0e8
+}
 /*
 
 NAVIGATION
@@ -167,11 +178,6 @@ HERO CONTENT
   font-size:3.5rem;
 }
 
-.hero__sub-title{
-  color:#a9a098;
-  font-size:1.1rem;
-}
-
 .hero__content form{
   display:flex;
   align-items: center;
@@ -198,10 +204,57 @@ HERO CONTENT
   color: #181818;
   font-weight:700;
   cursor:pointer;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  gap:0.6rem;
 }
 
+.search__btn.is-loading::after{
+  content: "";
+  width:1rem;
+  height:1rem;
+  border:2px solid currentColor;
+  border-right-color:transparent;
+  border-radius:50%;
+  animation:search-spin 0.7s linear infinite;
+}
 
+@keyframes search-spin{
+  to{
+    transform:rotate(360deg);
+  }
+}
 
+@media(prefers-reduced-motion:reduce){
+  .search__btn.is-loading::after{
+    animation-duration:1.5s;
+  }
+}
+
+/*
+
+DISCOVER
+
+*/
+
+.search__results{
+  background-color: #202020;
+}
+
+/*
+
+GENRE
+
+*/
+
+.genres{
+  background-color:#202020;
+}
+
+.genre__link{
+  color:#a9a098
+}
 /*
 
 FOOTER 
@@ -229,6 +282,10 @@ footer{
 
 .footer__link{
   color:#a9a098
+}
+
+.footer__copyright{
+  color:#f5f0e8
 }
 
 /*
