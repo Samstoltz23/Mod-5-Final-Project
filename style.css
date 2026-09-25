@@ -255,6 +255,17 @@ GENRE
 .genre__link{
   color:#a9a098
 }
+
+.genre__list{
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  width:100%;
+  max-width:1200px;
+}
+
+
+
 /*
 
 FOOTER 
