@@ -1,17 +1,30 @@
 // Send all data requests to: http://www.omdbapi.com/?apikey=[yourkey]&
 // Poster API requests: http://img.omdbapi.com/?apikey=[yourkey]&
-//OMDb API: http://www.omdbapi.com/?i=tt3896198&apikey=624cd05f&s=fast
+//OMDb API: http://www.omdbapi.com/?i=tt3896198&apikey=624cd05f&s=romance
 
-searchButton.classList.add("is-loading");
-searchButton.setAttribute("aria-busy", "true");
 
-try{
-  await runSearch();
-} finally{
-  searchButton.classList.remove("is-loading");
-  searchButton.removeAttribute("aria-busy");
-}
+const results = document.querySelector("#results");
 
+const movie = [
+  {
+     "Title":"The Fast and the Furious",
+     "Year":"2001",
+     "Poster":"https://m.media-amazon.com/images/M/MV5BZGRiMDE1NTMtMThmZS00YjE4LWI1ODQtNjRkZGZlOTg2MGE1XkEyXkFqcGc@._V1_SX300.jpg"
+  },
+  {
+    "Title":"True Romance",
+    "Year":"1993",
+    "Poster":"https://m.media-amazon.com/images/M/MV5BYzQ5OGMwMDAtMzcyOS00YTA4LWEwM2MtOTA1MDZjZGEyYmI1XkEyXkFqcGc@._V1_SX300.jpg"
+  }
+]
+results.innerHTML = movies.map(movie =>
+   `<article class="movie-card">
+    <img src="${movie.poster}" alt="Poster for ${movie.title}">
+    <h3>${movie.title}</h3>
+    <p>${movie.year}</p>
+  </article>`
+`).join("");
+)
 
 
 {"Search":[
@@ -91,3 +104,71 @@ try{
 
   }
 ],"totalResults":"961","Response":"True"}
+{"Search":[
+  {
+    "Title":"True Romance",
+    "Year":"1993",
+    "imdbID":"tt0108399",
+    "Type":"movie",
+    "Poster":"https://m.media-amazon.com/images/M/MV5BYzQ5OGMwMDAtMzcyOS00YTA4LWEwM2MtOTA1MDZjZGEyYmI1XkEyXkFqcGc@._V1_SX300.jpg"
+  },
+  {
+    "Title":"College Romance",
+    "Year":"2018–2023",
+    "imdbID":"tt8809646",
+    "Type":"series",
+    "Poster":"https://m.media-amazon.com/images/M/MV5BNDlkNzI2MWUtYTkyOS00MTkxLTg0YzctZmQwNjExYjQzOTc1XkEyXkFqcGdeQXVyMTExMTIzMTA5._V1_SX300.jpg"
+  },
+  {
+    "Title":"Romance",
+    "Year":"1999",
+    "imdbID":"tt0194314",
+    "Type":"movie",
+    "Poster":"https://m.media-amazon.com/images/M/MV5BZmIzM2JjMzMtZWM0OS00ZjNiLWFiYTAtZTNjNzZjMzdjZDI5XkEyXkFqcGc@._V1_QL75_UX380_CR0,0,380,562_.jpg"
+  },
+  {
+    "Title":"Romance & Cigarettes",
+    "Year":"2005",
+    "imdbID":"tt0368222",
+    "Type":"movie",
+    "Poster":"https://m.media-amazon.com/images/M/MV5BMTliNWE0MTMtNTBmYS00NWVhLThkYzAtMTAxMzMyZDNhNmQwXkEyXkFqcGc@._V1_SX300.jpg"
+  },
+  {
+    "Title":"Office Romance",
+    "Year":"1977",
+    "imdbID":"tt0076727",
+    "Type":"movie",
+    "Poster":"https://m.media-amazon.com/images/M/MV5BNTRmYjhkYzEtYTI3Zi00MGExLThiYWItYjIzZWFkZDdjY2E3XkEyXkFqcGc@._V1_SX300.jpg"
+  },
+  {
+    "Title":"Shuddh Desi Romance",
+    "Year":"2013",
+    "imdbID":"tt2988272",
+    "Type":"movie",
+    "Poster":"https://m.media-amazon.com/images/M/MV5BMTU0NjI2MTI0Ml5BMl5BanBnXkFtZTcwNjI4MzY5OQ@@._V1_SX300.jpg"},
+  {"Title":"Romance Is a Bonus Book","Year":"2019",
+    "imdbID":"tt9130542",
+    "Type":"series",
+    "Poster":"https://m.media-amazon.com/images/M/MV5BNmVmNmI0MzAtMzljNy00MjQ2LWI0NzktYzkwNzZmZWM1NTQ3XkEyXkFqcGc@._V1_QL75_UY562_CR7,0,380,562_.jpg"
+  },
+  {
+    "Title":"Murphy's Romance",
+    "Year":"1985",
+    "imdbID":"tt0089643",
+    "Type":"movie",
+    "Poster":"https://m.media-amazon.com/images/M/MV5BNDU3ZjA1YzktNDUxNy00MDVmLTlhMGQtYjljNjcwMTcwNzZiXkEyXkFqcGc@._V1_SX300.jpg"
+  },
+  {
+    "Title":"A Little Romance",
+    "Year":"1979",
+    "imdbID":"tt0079477",
+    "Type":"movie",
+    "Poster":"https://m.media-amazon.com/images/M/MV5BMTg1YjQ1ZWYtMDRkNi00MDNhLTk4ZTQtM2I1MTNmNzg4MGQ4XkEyXkFqcGc@._V1_QL75_UY562_CR0,0,380,562_.jpg"
+  },
+  {"Title":"Crash Course in Romance",
+    "Year":"2023",
+    "imdbID":"tt24578016",
+    "Type":"series",
+    "Poster":"https://m.media-amazon.com/images/M/MV5BZGE1ODM5MjktMGY0MS00NjA4LWFiOWItN2ZhZTYzN2RmNmM2XkEyXkFqcGc@._V1_QL75_UY562_CR7,0,380,562_.jpg"
+  }
+],"totalResults":"1704","Response":"True"}
