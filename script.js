@@ -1,9 +1,60 @@
 // Send all data requests to: http://www.omdbapi.com/?apikey=[yourkey]&
 // Poster API requests: http://img.omdbapi.com/?apikey=[yourkey]&
 //OMDb API: http://www.omdbapi.com/?i=tt3896198&apikey=624cd05f&s=romance
-
-
+const form = document.querySelector("#searchForm");
+const input = document.querySelector("#searchInput");
+const button = document.querySelector("#searchButton");
 const results = document.querySelector("#results");
+
+
+const apiKey = http://www.omdbapi.com/?i=tt3896198&apikey=624cd05f&
+
+form.addEventListener("submit", async (event) => {
+  event.preventDefault();
+  
+  const searchTerm = input.value.trim();
+
+  if (!searchTerm){
+    results.textContent = "Enter a movie title to search.";
+    return;
+  }
+
+  button.classList.add("is-loading");
+  button.disabled = true;
+  results.textContent = "searching...";
+
+  try{
+    const response = await fetch(
+      `http://www.omdbapi.com/?i=tt3896198&apikey=624cd05f&s=${encodeURIComponent(genre__link)}`
+    );
+    const data = await response.json();
+
+    if (data.Response === "False"){
+      results.textContent = data.Error;
+      return;
+    }
+  }
+
+  results.innerHTML = data.Search.map((movie) => 
+    `<article class="movie-card">
+      <img
+        src="${movie.Poster !== "N/A" ? movie.Poster : ""}"
+        alt="Poster for ${movie.Title}"
+      >
+      <h3>${movie.Title}</h3>
+      <p>${movie.Year} · ${movie.Type}</p>
+    </article>
+    `).join("");
+  } catch(error){
+    results.textContent = "Something went wrong. Please try again.";
+    console.error(error);
+  } finally{
+   button.classList.remove("is-loading");
+   button.disabled = false;
+}
+)
+
+
 
 const movie = [
   {
