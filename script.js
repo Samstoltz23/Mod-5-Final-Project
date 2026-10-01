@@ -12,7 +12,7 @@ form.addEventListener("submit", (event) => {
   event.preventDefault();
   const searchTerm = input.value.trim();
   console.log(searchTerm);
-  fetch(`http://www.omdbapi.com/?apikey=${apiKey}&s=${searchTerm}`)
+  fetch (`http://www.omdbapi.com/?apikey=${apiKey}&s=${searchTerm}`)
     .then((response) => response.json())
     .then((data) => {
       results.textContent = data.Search[0].Title;
