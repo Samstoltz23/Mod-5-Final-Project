@@ -4,3 +4,4 @@
 
 const apiKey = "http://www.omdbapi.com/?i=tt3896198&apikey=624cd05f&";
 
+const searchTerm = input.value.trim();
