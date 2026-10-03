@@ -54,20 +54,12 @@
           <input
             id="searchInput"
             class="search__input" type="text"
-            placeholder="Search for a movie...">
+            placeholder="Search by title...">
             <button id="searchButton" class="search__btn" type="submit">Search</button>
         </form>
-      </div>
-    </section>
-    <section id="discover" class="search__results" aria-live="polite">
-      <h2>Discover Movies</h2>
-      <div id="results"></div>
-    </section>
-    <section id="genres" class="genres">
-      <div class="container">
-        <div class="row">
-          <h2>Browse by genre</h2>
-          <div class="genre__list">
+        <div class="dropdown">
+          <button class="dropbtn">Search by Genre</button>
+          <div class="dropdown__content">
             <a href="genre__action" class="genre__link">
               <i class="fa-solid fa-bomb"></i>
               <h5>Action</h5>
@@ -96,11 +88,18 @@
               <i class="fa-solid fa-robot"></i>
               <h5>Science Fiction</h5>
             </a>
-            
           </div>
         </div>
       </div>
-      
+    </section>
+    <section id="discover" class="search__results" aria-live="polite">
+      <h2>Discover Movies</h2>
+      <div class="container">
+        <div class="row">
+          <div id="results"></div>
+          
+        </div>
+      </div>
     </section>
   </main>
   <footer>

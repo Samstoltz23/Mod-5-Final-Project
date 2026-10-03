@@ -19,5 +19,8 @@ form.addEventListener("submit", (event) => {
       .slice(0, 10)
       .map((movie) => `<p>${movie.Title}`)
       .join("");
+
     })
 });
+
+
