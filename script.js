@@ -7,7 +7,7 @@ const apiKey = "624cd05f&";
 const form = document.querySelector("#searchForm");
 const input = document.querySelector("#searchInput");
 const results = document.querySelector("#results");
-const genreLinks = document.querySelector(".genre__link");
+const genreLinks = document.querySelectorAll(".genre__link");
 
 
 form.addEventListener("submit", (event) => {
@@ -25,8 +25,22 @@ form.addEventListener("submit", (event) => {
     })
 });
 
-genreLinks.addEventListener("change", (event) => {
-  const genreLinks = event.target.value;
-  console.log(genreLinks);
+genreLinks.forEach((link) => {
+  link.addEventListener("click", (event) => {
+    event.preventDefault();
+    const genre = event.currentTarget.dataset.genre;
+    console.log(genre);
+  });
 });
 
+results.innerHTML = data.Search.map((movie) => `
+  <article class="movie-card">
+    ${
+      movie.Poster && movie.poster !== "N/A"
+      ? `<img src="${movie.Poster}" alt="Poster for ${movie.Title}">`
+      : `<div class="poster-placeholder"> No poster available</div>`
+   }
+    <h3>${movie.Title}</h3>
+    <p>${movie.Year}</p>
+  </article>
+`).join(""); 
