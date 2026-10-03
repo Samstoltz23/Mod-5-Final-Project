@@ -15,7 +15,9 @@ form.addEventListener("submit", (event) => {
   fetch (`http://www.omdbapi.com/?apikey=${apiKey}&s=${searchTerm}`)
     .then((response) => response.json())
     .then((data) => {
-      results.textContent = data.Search[0].Title;
-      console.log(data.Search[0].Title);
+      results.innerHTML = data.Search
+      .slice(0, 10)
+      .map((movie) => `<p>${movie.Title}`)
+      .join("");
     })
 });
