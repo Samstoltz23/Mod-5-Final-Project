@@ -7,6 +7,8 @@ const apiKey = "624cd05f&";
 const form = document.querySelector("#searchForm");
 const input = document.querySelector("#searchInput");
 const results = document.querySelector("#results");
+const dropdown = document.querySelector(".dropdown__content");
+
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -22,5 +24,4 @@ form.addEventListener("submit", (event) => {
 
     })
 });
-
 
