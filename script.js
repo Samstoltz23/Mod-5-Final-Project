@@ -7,7 +7,7 @@ const apiKey = "624cd05f&";
 const form = document.querySelector("#searchForm");
 const input = document.querySelector("#searchInput");
 const results = document.querySelector("#results");
-const dropdown = document.querySelector(".dropdown__content");
+const genreSelect = document.querySelector("#genre");
 
 
 form.addEventListener("submit", (event) => {
@@ -25,3 +25,8 @@ form.addEventListener("submit", (event) => {
     })
 });
 
+genreSelect.addEventListener("change", (event) => {
+  const selectedGenre = event.target.value;
+  const searchTerm = input.value.trim();
+  console.log(selectedGenre);
+});
