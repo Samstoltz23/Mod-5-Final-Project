@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap")
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
 
 *{
@@ -10,6 +10,10 @@
 
 .container{
   padding:50px 0;
+}
+
+img{
+  width:100%;
 }
 
 .link{
@@ -238,7 +242,7 @@ HERO CONTENT
   display:inline-block;
 }
 
-.dropbtn{
+.dropbtn {
   background-color:#f4c95d;
   color:white;
   padding:10px;
@@ -281,6 +285,20 @@ HERO CONTENT
 DISCOVER
 
 */
+
+#results{
+  display:flex;
+  flex-wrap:wrap;
+  width:100%;
+  max-width:1200px;
+  justify-content: center;
+  margin:0 auto;
+}
+
+.movie-card{
+  width:25%;
+  padding:12px;
+}
 
 .search__results{
   background-color:#f1e8df;
