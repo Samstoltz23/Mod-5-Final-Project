@@ -13,6 +13,8 @@
     event.preventDefault();
     const searchTerm = input.value.trim();
     console.log(searchTerm);
+    results.setAttribute("aria-busy", "true");
+    showSkeletons();
     fetch(`http://www.omdbapi.com/?apikey=${apiKey}&s=${searchTerm}`)
       .then((response) => response.json())
       .then((data) => {
@@ -29,7 +31,20 @@
           </article>
           `
         ).join("");
+        results.removeAttribute("aria-busy");
       })
   });
 
 
+function showSkeletons(count = 6){
+  results.innerHTML = `
+    <p class="sr-only" role="status">Loading movies...</p>
+    ${Array.from({ length: count }, () =>`
+      <article class="movie-card skeleton-card" aria-hidden="true">
+        <div class="skeleton skeleton-poster"></div>
+        <div class="skeleton skeleton-title"></div>
+        <div class="skeleton skeleton-year"></div>
+      </article>
+    `).join("")}
+  `;
+}
