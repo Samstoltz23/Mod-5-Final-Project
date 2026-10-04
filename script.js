@@ -1,22 +1,12 @@
-// Send all data requests to: http://www.omdbapi.com/?apikey=[yourkey]&
-// Poster API requests: http://img.omdbapi.com/?apikey=[yourkey]&
+// Send all data requests to: http://www.omdbapi.com/?apikey=[624cd05f]&
+// Poster API requests: http://img.omdbapi.com/?apikey=[624cd05f]&
 //OMDb API: http://www.omdbapi.com/?i=tt3896198&apikey=624cd05f&
 
- const apiKey = "624cd05f";
+ const apiKey = "624cd05f&";
 
  const form = document.querySelector("#searchForm");
  const input = document.querySelector("#searchInput");
  const results = document.querySelector("#results");
- const genreLinks = document.querySelectorAll(".genre__link");
-
- const genreIds = {
-  action:28,
-  comedy:35,
-  drama:18,
-  family:10751,
-  romance:10749,
-  "sci-fi":878
- }
 
 
   form.addEventListener("submit", (event) => {
@@ -42,11 +32,4 @@
       })
   });
 
- genreLinks.forEach((link) => {
-   link.addEventListener("click", (event) => {
-     event.preventDefault();
-     const genre = event.currentTarget.dataset.genre;
-     console.log(genre);
-   });
- });
 
