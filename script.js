@@ -1,8 +1,8 @@
-// Send all data requests to: http://www.omdbapi.com/?apikey=[624cd05f]&
-// Poster API requests: http://img.omdbapi.com/?apikey=[624cd05f]&
-//OMDb API: http://www.omdbapi.com/?i=tt3896198&apikey=624cd05f&
+// Send all data requests to: http://www.omdbapi.com/?apikey=[205b8cf5]&
+// Poster API requests: http://img.omdbapi.com/?apikey=[205b8cf5]&
+//OMDb API: http://www.omdbapi.com/?i=tt3896198&apikey=205b8cf5&
 
- const apiKey = "624cd05f&";
+ const apiKey = "205b8cf5";
 
  const form = document.querySelector("#searchForm");
  const input = document.querySelector("#searchInput");
@@ -32,6 +32,7 @@
           </article>
           `
         ).join("");
+        sortSelect.dispatchEvent(new Event("change"));
         results.removeAttribute("aria-busy");
       })
   });
@@ -47,7 +48,6 @@ function showSkeletons(count = 6){
         <div class="skeleton skeleton-year"></div>
       </article>
     `).join("")}
-    sortSelect.dispatchEvent(new Event("change"));
   `;
 }
 
@@ -68,7 +68,7 @@ sortSelect.addEventListener("change", () => {
       case "oldest":
         return yearA - yearB;
       default:
-        return titleA.localCompare(titleB);
+        return titleA.localeCompare(titleB);
     }
   });
   results.append(...cards);
