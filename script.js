@@ -47,21 +47,22 @@ function showSkeletons(count = 6){
         <div class="skeleton skeleton-year"></div>
       </article>
     `).join("")}
+    sortSelect.dispatchEvent(new Event("change"));
   `;
 }
 
 sortSelect.addEventListener("change", () => {
-  const cards = Array.form(results.querySelectorAll(".movie-card"));
+  const cards = Array.from(results.querySelectorAll(".movie-card"));
 
   cards.sort((a, b) => {
-    const titleA = a.querySelector("h3").textConent;
+    const titleA = a.querySelector("h3").textContent;
     const titleB = b.querySelector("h3").textContent;
     const yearA = Number.parseInt(a.querySelector("p").textContent, 10) || 0;
     const yearB = Number.parseInt(b.querySelector("p").textContent, 10) || 0;
 
     switch (sortSelect.value) {
       case "za":
-        return titleB.localCompare(titleA);
+        return titleB.localeCompare(titleA);
       case "newest":
         return yearB - yearA;
       case "oldest":

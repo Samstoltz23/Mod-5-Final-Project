@@ -35,7 +35,9 @@ img{
 }
 
 h2{
-  color:#f5f0e8
+  color:#49443d;
+  font-size:1.5rem;
+  padding-bottom:20px;
 }
 
 
@@ -271,7 +273,22 @@ DISCOVER
   object-fit:cover;
 }
 
+label{
+  color:#d6a85f;
+  font-size:14px;
+  font-weight:600;
+  margin-right:8px;
+}
 
+#sortSelect{
+  padding:6px 12px;
+  border-radius:25px;
+  border:none;
+  background-color:#f4c95d;
+  color:#181818;
+  font-weight:600;
+  margin-bottom:20px;
+}
 
 /*
 
