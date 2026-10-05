@@ -62,8 +62,14 @@
       <h2>Discover Movies</h2>
       <div class="container">
         <div class="row">
+          <label for="sortSelect">Sort Movies:</label>
+          <select id="sortSelect">
+            <option value="az">Title: A-Z</option>
+            <option value="za">Title: Z-A</option>
+            <option value="newest">Newest to Oldest</option>
+            <option value="oldest">Oldest to Newest</option>
+          </select>
           <div id="results"></div>
-          
         </div>
       </div>
     </section>

@@ -7,6 +7,7 @@
  const form = document.querySelector("#searchForm");
  const input = document.querySelector("#searchInput");
  const results = document.querySelector("#results");
+ const sortSelect = document.querySelector("#sortSelect");
 
 
   form.addEventListener("submit", (event) => {
@@ -48,3 +49,26 @@ function showSkeletons(count = 6){
     `).join("")}
   `;
 }
+
+sortSelect.addEventListener("change", () => {
+  const cards = Array.form(results.querySelectorAll(".movie-card"));
+
+  cards.sort((a, b) => {
+    const titleA = a.querySelector("h3").textConent;
+    const titleB = b.querySelector("h3").textContent;
+    const yearA = Number.parseInt(a.querySelector("p").textContent, 10) || 0;
+    const yearB = Number.parseInt(b.querySelector("p").textContent, 10) || 0;
+
+    switch (sortSelect.value) {
+      case "za":
+        return titleB.localCompare(titleA);
+      case "newest":
+        return yearB - yearA;
+      case "oldest":
+        return yearA - yearB;
+      default:
+        return titleA.localCompare(titleB);
+    }
+  });
+  results.append(...cards);
+});
