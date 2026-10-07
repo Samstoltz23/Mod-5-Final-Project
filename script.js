@@ -16,7 +16,7 @@
     console.log(searchTerm);
     results.setAttribute("aria-busy", "true");
     showSkeletons();
-    fetch(`http://www.omdbapi.com/?apikey=${apiKey}&s=${searchTerm}`)
+    fetch(`https://www.omdbapi.com/?apikey=${apiKey}&s=${searchTerm}`)
       .then((response) => response.json())
       .then((data) => {
         results.innerHTML = data.Search.map(
